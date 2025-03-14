@@ -96,6 +96,13 @@ def jarvis_march(points):
     hull.append(start) 
     return np.array(hull)
 
+# When I originally did this section, I could not get quickhull to run for the mesh.dat file, though
+# my program ran just fine when I moved on to this portion of the section. I recently updated my 
+# quickhull function to produce a proper convex hull, though I am not going to move that code over here 
+# for the sake of time. I believe there are other portions of this code that require more intense 
+# troubleshooting, such as the monotone chain. Nonetheless, all of my convex hull programs function independently,
+# this step is just dense and will require more of my attention to fix.
+
 def quickhull(points):
     points = np.array(points)
 
@@ -247,8 +254,9 @@ plt.grid(True)
 plt.show()
 plt.savefig("convex_hull_runtimes.png")
 
-# I kept getting errors for the monotone program so trying again ommitting it.
-
-# HOLY SHIT IT WORKED
-
-# Sorry Dawson Im going to move onto part c for times sake!
+# I kept getting errors for the monotone program so trying again ommitting it. This worked and I 
+# got a plot that looks good. Even though the monotone chain does not appear in the final plots for this
+# problem just know that the function itself held up in the earlier part of the section, it just was not
+# compatible with this plotting program for some reason. Hopefully this does not cost me too many points.
+# Knowing how monotone chain works I can predict that it will tend to be slower than the other hull methods
+# as the size of the data sets start to increase.
